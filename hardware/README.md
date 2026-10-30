@@ -97,7 +97,7 @@ O stream de vídeo (TCP 7060) não tem áudio.
 
 | Item | Situação |
 |---|---|
-| Sensor ToF **VL53L0X (TOF200C)**, I2C, ~1–1,2 m confiável (pior sob sol forte) | comprado, a caminho |
+| Sensor ToF **VL53L0X (TOF200C)**, I2C, ~1–1,2 m confiável (pior sob sol forte) | escolhido (~R$ 35), ainda não comprado |
 | ESP32 (ideal: ESP32-C3 Super Mini, leve) | a definir |
 | Bateria nova | a definir — dados da atual pendentes (abaixo) |
 
