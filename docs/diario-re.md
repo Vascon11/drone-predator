@@ -141,3 +141,8 @@ Outros: 'd' (nome/versão ASCII), 'f' (status de calibração), 'p' (parâmetros
 - Drone reportou estado 0 → **1 (destravado) em 0,55 s**; após 2 s `79 01` (travar) → estado 0. Depois travar + emergência (`94 02`).
 - Funciona **sem GPS (0 satélites) e com o controle remoto desligado**. Decolar (`94 00`) ainda não testado.
 - **Confirmado visualmente pelo usuário: as hélices giraram ~2 s e pararam.**
+
+## GPS confirmado (2026-10-29 23:51) — `scripts/gps_log.py`
+- Drone perto da janela: 0 satélites de 23:43 a 23:51; 23:50:31–23:51:32 lat/lon espúrios (~-41..-45, ~-29..-30) com 0 sats.
+- 23:51:33: 4 satélites, lat/lon coerentes com a localização real; gps_ok (flags bit0) = 0 o tempo todo; deriva ~70 m em 2 min.
+- Bateria oscila 33–38 nas leituras seguidas (provável % estimado pela tensão).

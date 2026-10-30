@@ -61,6 +61,7 @@ predator/
   lwgps.py             protocolo LWGPS (outra variante da mesma lib; NÃO é o deste drone)
 scripts/
   probe.py             teste só-leitura de telemetria (com whitelist)
+  gps_log.py           registra GPS em CSV até ter sinal firme (só leitura)
   teste_motores.py     destrava 2 s e trava (com whitelist, nunca decola)
   scan.py, dis.py      scanner de portas e desmontador ARM64 usados na RE
 docs/

@@ -69,6 +69,10 @@ O app envia a cada 50 ms um comando pendente ou o manche, e a cada 1 s o pedido 
 | `0x28` (len 10) | status de calibração e sensores (interpretação parcial) | ✅ recebido |
 | `0x04` (len 15) | não tratado pelo app; parece atitude (roll/pitch/yaw i16 ÷10) + último byte ~0x4B | ✅ recebido, significado 📄 hipótese |
 
+GPS ✅ (2026-10-29, perto da janela): após ~8 min apareceram 4 satélites e lat/lon coerentes com a localização
+real; "GPS ok" continuou 0 e a posição derivou ~70 m em 2 min. **Antes de travar nos satélites o receptor
+manda posições sem sentido** (ex.: -45°, -29°) com 0 satélites — só confiar em lat/lon com GPS ok.
+
 Observação: a altura vem do barômetro, relativa ao momento em que o drone ligou; varia ~1 m parado.
 
 ## Vídeo (TCP 7060) ✅
@@ -97,7 +101,7 @@ Resultado: H.264 Main, 1280×720, ~12,5 fps, lente grande-angular (olho de peixe
 ## Perguntas em aberto
 
 - Decolar/pousar/manche ainda não foram testados em voo; sentido dos eixos a confirmar.
-- O drone recusa decolar sem GPS? (o app tem a opção "Take off only when GPS signal is well").
+- Quantos satélites o drone exige para "GPS ok" (com 4 ficou 0) e se recusa decolar sem GPS (o app tem a opção "Take off only when GPS signal is well").
 - Significado do pacote `0x04` e dos bits do `0x28`.
 - Unidade exata da bateria.
 - Para que servem as portas 21 (FTP), 23 (telnet), 6288 e 8060.
