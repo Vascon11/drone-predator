@@ -1,0 +1,10 @@
+# binários do fabricante e ferramentas baixadas (não redistribuir)
+*.apk
+bin/
+tools/
+# capturas pessoais (fotos/vídeos)
+capturas/
+# Python
+__pycache__/
+*.pyc
+.venv/
