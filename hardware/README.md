@@ -93,6 +93,37 @@ O stream de vídeo (TCP 7060) não tem áudio.
   substituir o TX do Lewei ou servir de ponte entre os dois. ESP32 é 3,3 V.
 - Manter a carga extra baixa (~10–20 g) e alimentar pelo regulador, não direto da bateria.
 
+## Componentes
+
+| Item | Situação |
+|---|---|
+| Sensor ToF **VL53L0X (TOF200C)**, I2C, ~1–1,2 m confiável (pior sob sol forte) | comprado, a caminho |
+| ESP32 (ideal: ESP32-C3 Super Mini, leve) | a definir |
+| Bateria nova | a definir — dados da atual pendentes (abaixo) |
+
+Ligação do VL53L0X no ESP32: VCC → 3,3 V, GND → GND, SDA/SCL → dois GPIOs; biblioteca VL53L0X da Pololu.
+
+## Pendências para a próxima sessão no notebook
+
+Coletar com o drone em mãos e registrar aqui:
+
+**Bateria** (a atual parece gasta — perde carga rápido)
+- [ ] Foto da etiqueta: tensão (3,7 V 1S ou 7,4 V 2S?), capacidade (mAh), taxa C
+- [ ] Foto do conector de força e, se houver, do conector de balanceamento
+- [ ] Dimensões (C × L × A, mm) e peso (g)
+- [ ] Medir a tensão com o multímetro: carregada e depois de um voo
+- [ ] Verificar se está estufada/deformada — se estiver, parar de usar e descartar em ponto de coleta
+- [ ] Cruzar com a telemetria: o byte de bateria do `0x89` é % ou outra unidade?
+
+**Conectores**
+- [ ] Tensões do conector de 4 pinos (vermelho, branco, azul em relação ao preto)
+- [ ] Escuta da serial no branco e no azul (baudrate, sentido de cada fio)
+- [ ] Passo dos pinos do conector de 4 pinos (para o cabo Y)
+- [ ] Teste do servo via `ptz1`/`ptz2`
+
+**Etiquetas do drone**
+- [ ] Procurar FCC ID / modelo na etiqueta ou na caixa (fotos internas em fcc.report)
+
 ## Fotos
 
 | | |
