@@ -86,6 +86,9 @@ O stream de vídeo (TCP 7060) não tem áudio.
 
 ## Ideias de expansão
 
+Diagramas de ligação do ESP32 (Wi-Fi e UART): [`esp32.md`](esp32.md).
+
+
 - **ESP32 por fora, via Wi-Fi** (não precisa abrir): conecta na rede do drone como cliente e fala UDP 50000,
   com bateria 1S própria e um ToF (ex.: VL53L1X) apontado para baixo para pouso preciso.
 - **ESP32 na UART** (depois do passo 2): autonomia embarcada falando o protocolo BT por fio.
