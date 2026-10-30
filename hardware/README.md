@@ -99,7 +99,8 @@ O stream de vídeo (TCP 7060) não tem áudio.
 |---|---|
 | Sensor ToF **VL53L0X (TOF200C)**, I2C, ~1–1,2 m confiável (pior sob sol forte) | escolhido (~R$ 35), ainda não comprado |
 | ESP32 (ideal: ESP32-C3 Super Mini, leve) | a definir |
-| Bateria nova | a definir — dados da atual pendentes (abaixo) |
+| Bateria atual: **7,4 V (2S), 1500 mAh** — parece gasta | ✅ informado |
+| Bateria nova: 7,4 V, de preferência maior capacidade (até ~2000–2200 mAh, se couber e não pesar demais) | a comprar |
 
 Ligação do VL53L0X no ESP32: VCC → 3,3 V, GND → GND, SDA/SCL → dois GPIOs; biblioteca VL53L0X da Pololu.
 
@@ -108,7 +109,8 @@ Ligação do VL53L0X no ESP32: VCC → 3,3 V, GND → GND, SDA/SCL → dois GPIO
 Coletar com o drone em mãos e registrar aqui:
 
 **Bateria** (a atual parece gasta — perde carga rápido)
-- [ ] Foto da etiqueta: tensão (3,7 V 1S ou 7,4 V 2S?), capacidade (mAh), taxa C
+- [x] Tensão e capacidade: 7,4 V, 1500 mAh
+- [ ] Foto da etiqueta: taxa C e química (LiPo ou Li-ion)
 - [ ] Foto do conector de força e, se houver, do conector de balanceamento
 - [ ] Dimensões (C × L × A, mm) e peso (g)
 - [ ] Medir a tensão com o multímetro: carregada e depois de um voo
