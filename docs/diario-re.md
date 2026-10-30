@@ -146,3 +146,7 @@ Outros: 'd' (nome/versão ASCII), 'f' (status de calibração), 'p' (parâmetros
 - Drone perto da janela: 0 satélites de 23:43 a 23:51; 23:50:31–23:51:32 lat/lon espúrios (~-41..-45, ~-29..-30) com 0 sats.
 - 23:51:33: 4 satélites, lat/lon coerentes com a localização real; gps_ok (flags bit0) = 0 o tempo todo; deriva ~70 m em 2 min.
 - Bateria oscila 33–38 nas leituras seguidas (provável % estimado pela tensão).
+- Varanda (2026-10-29 23:58 → 00:02): 4 satélites desde o início (recuperou da janela), gps_ok = 0 em 240 leituras,
+  posição espalhada ~170 × 190 m, bateria 33 → 29. Teste interrompido para economizar bateria.
+  Hipóteses p/ ficar em 4 sats: céu parcialmente coberto pela varanda/prédio, antena do GPS dentro da carcaça,
+  receptor simples (só GPS, sem GLONASS/Galileo). Repetir ao ar livre, céu aberto, bateria cheia.
