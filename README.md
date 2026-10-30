@@ -64,6 +64,8 @@ scripts/
   gps_log.py           registra GPS em CSV até ter sinal firme (só leitura)
   teste_motores.py     destrava 2 s e trava (com whitelist, nunca decola)
   scan.py, dis.py      scanner de portas e desmontador ARM64 usados na RE
+hardware/
+  README.md            placas, conectores, sensores e próximos passos de hardware (com fotos)
 docs/
   protocolo.md         como o drone funciona (rede, protocolos, comandos)
   diario-re.md         diário da engenharia reversa (evidências, endereços, testes)
