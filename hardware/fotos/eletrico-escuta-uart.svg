@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" font-family="Arial, Helvetica, sans-serif">
+  <rect width="1000" height="560" fill="#ffffff"/>
+  <text x="500" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Teste de escuta da serial — USB-TTL no conector de 4 pinos</text>
+  <text x="500" y="58" text-anchor="middle" font-size="14" fill="#555">Só escuta: apenas 2 fios. O conector continua encaixado na câmera, nada é desligado.</text>
+
+  <!-- ===== Drone connector ===== -->
+  <rect x="60" y="120" width="260" height="300" rx="10" fill="#263238" stroke="#111" stroke-width="2"/>
+  <text x="190" y="150" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">Conector 4 pinos</text>
+  <text x="190" y="170" text-anchor="middle" font-size="12" fill="#cfd8dc">(ao lado do ON/OFF)</text>
+  <g font-size="15" fill="#fff">
+    <text x="80" y="215">vermelho</text><text x="80" y="275">preto</text>
+    <text x="80" y="335">branco</text><text x="80" y="395">azul</text>
+  </g>
+  <g font-size="12" fill="#b0bec5" text-anchor="end">
+    <text x="300" y="215">~5 V 🔎</text><text x="300" y="275">GND</text>
+    <text x="300" y="335">TX ou RX 🔎</text><text x="300" y="395">RX ou TX 🔎</text>
+  </g>
+  <g stroke="#111" stroke-width="2">
+    <circle cx="320" cy="210" r="8" fill="#d32f2f"/>
+    <circle cx="320" cy="270" r="8" fill="#222"/>
+    <circle cx="320" cy="330" r="8" fill="#f5f5f5"/>
+    <circle cx="320" cy="390" r="8" fill="#1565c0"/>
+  </g>
+
+  <!-- ===== USB-TTL ===== -->
+  <rect x="600" y="120" width="220" height="300" rx="10" fill="#c62828" stroke="#7f0000" stroke-width="2"/>
+  <text x="760" y="255" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">USB-TTL</text>
+  <text x="760" y="275" text-anchor="middle" font-size="12" fill="#ffcdd2">CP2102 / CH340</text>
+  <text x="760" y="292" text-anchor="middle" font-size="12" fill="#ffcdd2">jumper em 3V3</text>
+  <g font-size="15" fill="#fff">
+    <text x="614" y="175">5V</text><text x="614" y="225">3V3</text><text x="614" y="275">GND</text>
+    <text x="614" y="335">RXD</text><text x="614" y="385">TXD</text>
+  </g>
+  <g fill="#d4af37" stroke="#7a6418">
+    <circle cx="600" cy="170" r="6"/><circle cx="600" cy="220" r="6"/><circle cx="600" cy="270" r="6"/>
+    <circle cx="600" cy="330" r="6"/><circle cx="600" cy="380" r="6"/>
+  </g>
+  <g font-size="13" font-weight="bold" fill="#ffe082">
+    <text x="665" y="175">✗ não ligar</text><text x="665" y="225">✗ não ligar</text><text x="665" y="385">✗ não ligar</text>
+  </g>
+  <rect x="820" y="245" width="40" height="50" rx="4" fill="#9aa5b1" stroke="#555"/>
+  <text x="900" y="275" font-size="13" fill="#111">→ notebook</text>
+
+  <!-- ===== WIRES ===== -->
+  <g fill="none" stroke-width="4">
+    <line x1="328" y1="270" x2="600" y2="270" stroke="#222"/>
+    <line x1="328" y1="330" x2="600" y2="330" stroke="#9e9e9e" stroke-dasharray="0"/>
+  </g>
+  <line x1="328" y1="330" x2="600" y2="330" stroke="#f5f5f5" stroke-width="2"/>
+  <g font-size="13" font-weight="bold">
+    <text x="464" y="262" text-anchor="middle" fill="#222">preto → GND</text>
+    <text x="464" y="322" text-anchor="middle" fill="#555">branco → RXD (1ª tentativa)</text>
+  </g>
+
+  <!-- not connected marks -->
+  <g font-size="13" fill="#c62828" font-weight="bold">
+    <text x="340" y="214">✗ não ligar</text>
+    <text x="340" y="394">azul: 2ª tentativa (troque com o branco)</text>
+  </g>
+
+  <!-- steps -->
+  <g font-size="13.5" fill="#222">
+    <text x="60" y="460">1. Antes: medir com multímetro (ponta preta no preto). Branco/azul ≈ 3,3 V → ok. ≈ 5 V → só com USB-TTL em 5 V.</text>
+    <text x="60" y="484">2. Ligar o drone, conectar o app/notebook, abrir o terminal serial a 115200 (depois 57600, 19200).</text>
+    <text x="60" y="508">3. Procurar 42 54 3C (app → drone) ou 42 54 3E (drone → app). Anotar qual fio mostra qual.</text>
+    <text x="60" y="532">4. Dica: encostar o jumper no contato de trás do conector, sem desencaixar nada.</text>
+  </g>
+</svg>
