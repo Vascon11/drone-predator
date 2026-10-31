@@ -1,5 +1,7 @@
 # Predator — controle de drone pelo computador
 
+![Drone Predator](hardware/fotos/01-visao-geral.jpg)
+
 Controle de um hexacóptero chinês genérico ("Predator", app **LW-FPV**, módulo Wi-Fi **Lewei**) direto do
 notebook, sem o app do celular e sem o controle remoto. Base para colocar uma IA pilotando.
 
