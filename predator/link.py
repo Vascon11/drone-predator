@@ -91,11 +91,11 @@ class Drone:
             else:
                 self._queue += [frame] * repeat
 
-    def set_sticks(self, roll=1500, pitch=1500, yaw=1500, throttle=1500):
+    def set_sticks(self, roll=1500, pitch=1500, yaw=1500, throttle=1500, ptz2=1500):
         clamp = lambda v: max(1000, min(2000, int(v)))  # noqa: E731
         with self._lock:
             self.sticks = {"roll": clamp(roll), "pitch": clamp(pitch),
-                           "yaw": clamp(yaw), "throttle": clamp(throttle)}
+                           "yaw": clamp(yaw), "throttle": clamp(throttle), "ptz2": clamp(ptz2)}
 
     # --- threads ---
     def _send(self, data):

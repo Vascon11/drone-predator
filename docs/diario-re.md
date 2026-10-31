@@ -150,3 +150,33 @@ Outros: 'd' (nome/versão ASCII), 'f' (status de calibração), 'p' (parâmetros
   posição espalhada ~170 × 190 m, bateria 33 → 29. Teste interrompido para economizar bateria.
   Hipóteses p/ ficar em 4 sats: céu parcialmente coberto pela varanda/prédio, antena do GPS dentro da carcaça,
   receptor simples (só GPS, sem GLONASS/Galileo). Repetir ao ar livre, céu aberto, bateria cheia.
+
+## Gimbal/PTZ da câmera (2026-10-30) — `scripts/teste_camera.py`
+- App: gimbal = "Yuntai" (云台). `LW93MainActivity.onYuntaiProgress`: barra > 50 → `JoystickPara.ptz_v = 1800`, < 50 → `1200`;
+  `onYuntaiStop` → `1500` e recentraliza a barra. É comando de velocidade, não posição. Nada no app escreve `ptz_h` além da inicialização.
+- `GetBTVirtulRockerControlData` 0x106e74 copia os campos +0xe/+0x10 sem transformar para os dois últimos u16 do `0xB5`.
+  `GetLWPTZControlData` 0x10c21c (variante LW) usa os mesmos campos, o que os identifica como PTZ. Qual deles é `ptz_v` não foi conferido; os dois foram testados.
+- A barra aparece/some num `onClick` (`LW93MainActivity$23`), sem checagem de modelo no trecho lido: a barra existir no app não prova que há motor.
+- Ao vivo, drone travado (estado 0), controle desligado não verificado, sem destravar: ptz1 e ptz2 em 2000/1000 por 3 s e em 1800/1200 por 6 s.
+  Correlação de fase contra a referência: **0 px em todas as fases**, cena com bastante detalhe. Braço do drone sempre no mesmo lugar da imagem.
+- Mancha verde na imagem = LED do drone piscando: aparece também com os canais em 1500, inclusive na referência.
+- Hipóteses restantes: câmera sem motor (inclinação fixa ou manual) ou firmware que só aciona PTZ em outro estado (ex.: destravado).
+- Mapeamento confirmado em `LW_ControlPara_struct` 0x11af38: ptz_h = +0xe = `ptz1`, ptz_v = +0x10 = `ptz2`. O app só envia `0xB5` com `joystickOn` ligado.
+- O app parado manda acelerador 1500 (`FlyCtrl.initSendData`), não 1000. Repetido com pacote igual ao do app (acel. 1500, ptz2 1800/1200, 8 s, drone travado): **0 px**.
+- Destravado, sem hélices, app supostamente fechado (`scripts/teste_camera_destravado.py`, 17:08): estado 1, ptz2 1800/1200 por 5 s e ptz1 1800/1200 por 3 s: **0 px**. Travou ao final (estado 0).
+- O usuário testou a barra no app com o drone travado: nada aconteceu, mas a telemetria do app estava zerada na foto, então o teste não é conclusivo.
+- O usuário relata que já moveu a câmera antes, que ela está firme mas parece móvel, com engrenagem, e que vê um motorzinho na lateral: motor existe, provavelmente. Novas hipóteses: PTZ só destravado, só pelo controle físico, ou mecanismo/ligação com defeito.
+
+## Bateria, motores e gravações (2026-10-30 e 31)
+- 2026-10-30, sem hélices: `teste_motores.py` não destravou em 3 tentativas com bateria 2–3 (antes 62). Causa mais provável: pouca carga.
+- 2026-10-31, sem hélices, bateria carregada: destravou em 0,60 s e travou sozinho. Bateria caiu de 100 para 69 em ~40 min ligado, sem voar.
+- Gravados `capturas/normais_4m.h264` (3597 quadros) e `normais_6m.h264` (3600 quadros, distância real ~5,5 m), 180 s, ~20 fps, sem erro de
+  decodificação. Copiados com hash conferido para o pendrive, com `sim_1793406047.json`. Análise de falsos disparos fica no outro computador.
+
+## Seguir por visão no app (2026-10-31)
+- `jadx` 1.5.2 leu o APK (2 erros em 2663 classes). Yuntai só altera `ptz_v`, sem condição no Java: suspeita de falha física ou de ligação na câmera.
+- Modo `CTL_VisionFollow`: `VisionObjRectToJoystickValue` 0x111e78 (`liblewei_uartprotol.so`) converte o retângulo do alvo em manche.
+- Caso padrão (`droneID` 0/0x18): resultado com mais de 200 ms centra yaw e pitch. Yaw = 1500 − erro·velocidade·500/(W·10), erro = W/2 − (x + w/2);
+  zona morta W/20; teto ±200. Distância: afastar −124 se h > 0,8W, h > 0,9H, y < 0,1H ou y + h > 0,9H; aproximar +124 se h < 0,5H e w < 0,3W;
+  histerese de 5 s ao inverter. Acelerador só em variantes (1350/1650). Sem pouso ao perder alvo. `droneID` deste drone não confirmado.
+- Status: só análise estática; sentido real de yaw e pitch segue sem teste em voo.

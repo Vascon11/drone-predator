@@ -1,5 +1,7 @@
 # Predator — controle de drone pelo computador
 
+![Drone Predator](hardware/fotos/01-visao-geral.jpg)
+
 Controle de um hexacóptero chinês genérico ("Predator", app **LW-FPV**, módulo Wi-Fi **Lewei**) direto do
 notebook, sem o app do celular e sem o controle remoto. Base para colocar uma IA pilotando.
 
@@ -29,6 +31,10 @@ python3 controle.py --somente-leitura   # vídeo + telemetria, nenhum comando de
 python3 controle.py                     # controle completo
 ```
 
+A janela mostra vídeo, telemetria e botões clicáveis para os comandos abaixo; destravar, decolar e voltar
+pra casa também pedem dois cliques. Os botões **CÂMERA ▲/▼** só agem enquanto seguros, e o sentido não foi
+confirmado: até agora o comando não moveu a câmera neste drone (veja `docs/protocolo.md`).
+
 | Tecla | Ação |
 |---|---|
 | **ESPAÇO** | **EMERGÊNCIA** — corta os motores na hora (no ar, o drone cai) |
@@ -40,7 +46,9 @@ python3 controle.py                     # controle completo
 | H H | voltar pra casa (dois toques) |
 | W/S, A/D, Q/E, R/F | frente/trás, esquerda/direita, girar, subir/descer (só depois de decolar) |
 | SHIFT | movimento rápido (±400 em vez de ±200) |
+| I / K | câmera para cima / para baixo (enquanto segurar) |
 | C / V | foto / liga-desliga gravação (em `capturas/`) |
+| F11 | liga/desliga tela cheia (ou abra com `--tela-cheia`) |
 | ESC | sair — se destravado, pousa/trava antes e espera; ESC de novo força a saída |
 
 Travas de segurança: no chão o acelerador fica no mínimo e o manche é ignorado; destravar, decolar e
@@ -63,6 +71,8 @@ scripts/
   probe.py             teste só-leitura de telemetria (com whitelist)
   gps_log.py           registra GPS em CSV até ter sinal firme (só leitura)
   teste_motores.py     destrava 2 s e trava (com whitelist, nunca decola)
+  teste_camera.py      testa os canais PTZ com o drone travado e mede se a imagem muda
+  teste_camera_destravado.py  mesmo teste com motores em marcha lenta (só SEM hélices)
   scan.py, dis.py      scanner de portas e desmontador ARM64 usados na RE
 docs/
   protocolo.md         como o drone funciona (rede, protocolos, comandos)

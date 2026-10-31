@@ -55,6 +55,7 @@ Fonte: `GetBTGPSTxData` 0x107dfc, `ParseBTInfoData` 0x108650, `Get_BTChecksum` 0
 | Calibrar acelerômetro / bússola | `0x7A F1` / `0x7A E1` | 📄 |
 | Headless liga/desliga | `0x6F 01` / `0x6F 00` | 📄 |
 | Manche | `0xB5` + 6×u16 LE: roll, pitch, yaw, acelerador, ptz1, ptz2 (1000–2000, centro 1500) | ✅ enviado (acel. 1000) durante o teste de motores |
+| Gimbal da câmera (barra "Yuntai" do app) | `ptz2` do `0xB5` (= `ptz_v`): 1800 = um sentido, 1200 = outro, 1500 = parar (comando de velocidade). A imagem **não se moveu** travado (pacote igual ao do app) nem destravado | ✅ enviado, sem efeito |
 | Seguir | `0xB0` `01` + lat i32 + lon i32 (×1e7) | 📄 |
 | Ler / gravar parâmetros | `0xB8` / `0xB9` | 📄 |
 
@@ -98,10 +99,16 @@ Ofuscação (desfeita em `predator/video.py`):
 
 Resultado: H.264 Main, 1280×720, ~12,5 fps, lente grande-angular (olho de peixe).
 
+## Seguir por visão do app 📄
+
+Modo `CTL_VisionFollow`, em `VisionObjRectToJoystickValue` 0x111e78. Detalhes e limites em [`diario-re.md`](diario-re.md).
+O `droneID` deste drone não foi confirmado.
+
 ## Perguntas em aberto
 
 - Decolar/pousar/manche ainda não foram testados em voo; sentido dos eixos a confirmar.
 - Quantos satélites o drone exige para "GPS ok" (com 4 ficou 0) e se recusa decolar sem GPS (o app tem a opção "Take off only when GPS signal is well").
+- Por que a câmera não se move? O PTZ não moveu a imagem travado nem destravado; o Java do app não tem condição extra, então falta testar pelo controle físico e checar motor, fios e engrenagem.
 - Significado do pacote `0x04` e dos bits do `0x28`.
 - Unidade exata da bateria.
 - Para que servem as portas 21 (FTP), 23 (telnet), 6288 e 8060.
