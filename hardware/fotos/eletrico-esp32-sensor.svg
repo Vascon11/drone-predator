@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" font-family="Arial, Helvetica, sans-serif">
+  <rect width="1000" height="640" fill="#ffffff"/>
+  <text x="500" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Opção A — ESP32-C3 Super Mini + VL53L0X + bateria 1S</text>
+
+  <!-- ===== ESP32-C3 Super Mini ===== -->
+  <rect x="380" y="130" width="200" height="350" rx="10" fill="#1e3a5f" stroke="#0d1f33" stroke-width="2"/>
+  <rect x="445" y="112" width="70" height="26" rx="5" fill="#9aa5b1" stroke="#555"/>
+  <text x="480" y="130" text-anchor="middle" font-size="12" fill="#111">USB-C</text>
+  <text x="480" y="300" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">ESP32-C3</text>
+  <text x="480" y="322" text-anchor="middle" font-size="15" fill="#fff">Super Mini</text>
+  <!-- left pins -->
+  <g font-size="14" fill="#fff">
+    <text x="392" y="175">5V</text><text x="392" y="215">GND</text><text x="392" y="255">3V3</text>
+    <text x="392" y="295">GPIO4</text><text x="392" y="335">GPIO3</text><text x="392" y="375">GPIO2</text>
+    <text x="392" y="415">GPIO1</text><text x="392" y="455">GPIO0</text>
+  </g>
+  <g font-size="14" fill="#fff" text-anchor="end">
+    <text x="568" y="175">GPIO5</text><text x="568" y="215">GPIO6</text><text x="568" y="255">GPIO7</text>
+    <text x="568" y="295">GPIO8</text><text x="568" y="335">GPIO9</text><text x="568" y="375">GPIO10</text>
+    <text x="568" y="415">GPIO20</text><text x="568" y="455">GPIO21</text>
+  </g>
+  <g fill="#d4af37" stroke="#7a6418">
+    <circle cx="380" cy="170" r="6"/><circle cx="380" cy="210" r="6"/><circle cx="380" cy="250" r="6"/>
+    <circle cx="380" cy="290" r="6"/><circle cx="380" cy="330" r="6"/><circle cx="380" cy="370" r="6"/>
+    <circle cx="380" cy="410" r="6"/><circle cx="380" cy="450" r="6"/>
+    <circle cx="580" cy="170" r="6"/><circle cx="580" cy="210" r="6"/><circle cx="580" cy="250" r="6"/>
+    <circle cx="580" cy="290" r="6"/><circle cx="580" cy="330" r="6"/><circle cx="580" cy="370" r="6"/>
+    <circle cx="580" cy="410" r="6"/><circle cx="580" cy="450" r="6"/>
+  </g>
+
+  <!-- ===== VL53L0X ===== -->
+  <rect x="760" y="170" width="190" height="280" rx="10" fill="#6a1b9a" stroke="#3d0f59" stroke-width="2"/>
+  <text x="900" y="225" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">VL53L0X</text>
+  <text x="900" y="245" text-anchor="middle" font-size="13" fill="#fff">TOF200C</text>
+  <text x="900" y="265" text-anchor="middle" font-size="12" fill="#e1bee7">lente p/ baixo</text>
+  <g font-size="14" fill="#fff">
+    <text x="772" y="205">VCC</text><text x="772" y="265">SDA</text><text x="772" y="305">SCL</text>
+    <text x="772" y="345">INT</text><text x="772" y="385">XSHUT</text><text x="772" y="425">GND</text>
+  </g>
+  <g fill="#d4af37" stroke="#7a6418">
+    <circle cx="760" cy="200" r="6"/><circle cx="760" cy="260" r="6"/><circle cx="760" cy="300" r="6"/>
+    <circle cx="760" cy="340" r="6"/><circle cx="760" cy="380" r="6"/><circle cx="760" cy="420" r="6"/>
+  </g>
+  <g font-size="12" fill="#e1bee7">
+    <text x="850" y="345">(não ligar)</text><text x="850" y="385">(não ligar)</text>
+  </g>
+
+  <!-- ===== Battery + switch ===== -->
+  <rect x="40" y="480" width="170" height="90" rx="8" fill="#f9a825" stroke="#8a5d00" stroke-width="2"/>
+  <text x="125" y="518" text-anchor="middle" font-size="16" font-weight="bold" fill="#111">Bateria 1S</text>
+  <text x="125" y="540" text-anchor="middle" font-size="13" fill="#111">3,7 V · 150–300 mAh</text>
+  <text x="200" y="507" text-anchor="end" font-size="16" font-weight="bold" fill="#b71c1c">+</text>
+  <text x="200" y="560" text-anchor="end" font-size="18" font-weight="bold" fill="#111">−</text>
+
+  <!-- switch symbol -->
+  <circle cx="245" cy="500" r="4" fill="#111"/>
+  <line x1="245" y1="500" x2="280" y2="486" stroke="#111" stroke-width="3"/>
+  <circle cx="290" cy="500" r="4" fill="#111"/>
+  <text x="267" y="474" text-anchor="middle" font-size="12" fill="#111">chave</text>
+
+  <!-- ===== WIRES ===== -->
+  <g fill="none" stroke-width="4" stroke-linejoin="round">
+    <!-- battery + -> switch -> 5V -->
+    <polyline points="210,500 245,500" stroke="#d32f2f"/>
+    <polyline points="290,500 300,500 300,170 380,170" stroke="#d32f2f"/>
+    <!-- 3V3 -> sensor VCC (top route) -->
+    <path d="M380,250 L350,250 L350,180 A10,10 0 0 0 350,160 L350,95 L720,95 L720,200 L760,200" stroke="#ef6c00"/>
+    <!-- GND bus -->
+    <polyline points="380,210 330,210 330,600 740,600 740,420 760,420" stroke="#222"/>
+    <polyline points="210,555 330,555" stroke="#222"/>
+    <!-- SDA -->
+    <polyline points="580,290 650,290 650,260 760,260" stroke="#1565c0"/>
+    <!-- SCL -->
+    <polyline points="580,330 690,330 690,300 760,300" stroke="#c9a400"/>
+  </g>
+  <circle cx="330" cy="555" r="6" fill="#222"/>
+
+  <!-- wire labels -->
+  <g font-size="13" font-weight="bold">
+    <text x="530" y="88" fill="#ef6c00">laranja: 3V3 → VCC</text>
+    <text x="340" y="122" text-anchor="end" font-size="11" font-weight="normal" fill="#ef6c00">(passa por cima do</text>
+    <text x="340" y="135" text-anchor="end" font-size="11" font-weight="normal" fill="#ef6c00">vermelho, sem encostar)</text>
+    <text x="530" y="620" fill="#222">preto: GND comum (bateria − , ESP32 GND, sensor GND)</text>
+    <text x="305" y="160" fill="#d32f2f" text-anchor="end">vermelho: + → 5V</text>
+    <text x="600" y="255" fill="#1565c0">azul: GPIO8 → SDA</text>
+    <text x="600" y="355" fill="#c9a400">amarelo: GPIO9 → SCL</text>
+  </g>
+
+  <!-- notes -->
+  <g font-size="12.5" fill="#333">
+    <text x="350" y="507">• Desligue a chave antes de plugar o USB no ESP32.</text>
+    <text x="350" y="525">• A ordem dos pinos do sensor muda conforme o</text>
+    <text x="362" y="541">módulo: siga os NOMES, não a posição.</text>
+    <text x="350" y="559">• Sem fio com o drone: o ESP32 fala com ele</text>
+    <text x="362" y="575">pelo Wi-Fi (UDP 50000).</text>
+  </g>
+</svg>

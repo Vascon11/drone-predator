@@ -74,6 +74,8 @@ scripts/
   teste_camera.py      testa os canais PTZ com o drone travado e mede se a imagem muda
   teste_camera_destravado.py  mesmo teste com motores em marcha lenta (só SEM hélices)
   scan.py, dis.py      scanner de portas e desmontador ARM64 usados na RE
+hardware/
+  README.md            placas, conectores, sensores e próximos passos de hardware (com fotos)
 docs/
   protocolo.md         como o drone funciona (rede, protocolos, comandos)
   diario-re.md         diário da engenharia reversa (evidências, endereços, testes)
