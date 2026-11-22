@@ -1,0 +1,29 @@
+[Desktop Entry]
+Type=Application
+Name=Predator
+GenericName=Controle do drone
+Comment=Pilotar o hexacoptero Predator: video, telemetria, teclado, roteiros e gestos
+Exec=/mnt/dados/Documentos/drone/predator/app-rust/target/release/predator-gnome
+Icon=predator-drone
+Terminal=false
+Categories=Utility;
+Keywords=drone;predator;voo;piloto;
+StartupNotify=true
+StartupWMClass=local.predator.Painel
+Actions=Seco;Voar;Gestos;Manobra;
+
+[Desktop Action Seco]
+Name=Abrir em modo seco
+Exec=/mnt/dados/Documentos/drone/predator/app-rust/target/release/predator-gnome --modo seco
+
+[Desktop Action Voar]
+Name=Voar
+Exec=/mnt/dados/Documentos/drone/predator/app-rust/target/release/predator-gnome --modo voar
+
+[Desktop Action Gestos]
+Name=Voar com gestos
+Exec=/mnt/dados/Documentos/drone/predator/app-rust/target/release/predator-gnome --modo gestos
+
+[Desktop Action Manobra]
+Name=Teste: frente, tras, direita, esquerda
+Exec=/mnt/dados/Documentos/drone/predator/app-rust/target/release/predator-gnome --modo manobra
