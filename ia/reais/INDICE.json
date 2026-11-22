@@ -1,0 +1,172 @@
+{
+ "voo1m_20261101_121924": {
+  "linhas": 114,
+  "duracao_s": 11.6,
+  "nota": ""
+ },
+ "voo1m_20261101_122050": {
+  "linhas": 123,
+  "duracao_s": 12.5,
+  "nota": ""
+ },
+ "voo1m_20261101_122115": {
+  "linhas": 144,
+  "duracao_s": 14.4,
+  "nota": ""
+ },
+ "voo1m_20261101_122237": {
+  "linhas": 290,
+  "duracao_s": 29.3,
+  "nota": ""
+ },
+ "voo1m_20261101_122422": {
+  "linhas": 30,
+  "duracao_s": 2.9,
+  "nota": ""
+ },
+ "voo1m_20261101_122504": {
+  "linhas": 231,
+  "duracao_s": 23.1,
+  "nota": ""
+ },
+ "voo1m_20261101_122724": {
+  "linhas": 99,
+  "duracao_s": 9.9,
+  "nota": ""
+ },
+ "voo1m_20261120_084929": {
+  "linhas": 144,
+  "duracao_s": 14.5,
+  "nota": "decolar por 0x94 (não subiu); sem acelerador"
+ },
+ "voo1m_20261120_145855": {
+  "linhas": 96,
+  "duracao_s": 9.8,
+  "nota": "pulso de acelerador 1650 por 1 s e depois neutro; subiu a ~3 m/s e capotou"
+ },
+ "voo1m_20261120_150130": {
+  "linhas": 102,
+  "duracao_s": 10.4,
+  "nota": "pulso 1650; deitou de lado"
+ },
+ "voo1m_20261120_150505": {
+  "linhas": 71,
+  "duracao_s": 7.1,
+  "nota": "pulso 1550; não saiu do chão"
+ },
+ "voo1m_20261120_150649": {
+  "linhas": 78,
+  "duracao_s": 7.8,
+  "nota": "pulso 1600; ~20 cm"
+ },
+ "voo1m_20261120_151033": {
+  "linhas": 78,
+  "duracao_s": 7.8,
+  "nota": "pulso 1600, sem vento; não decolou"
+ },
+ "voo1m_20261120_151209": {
+  "linhas": 78,
+  "duracao_s": 7.8,
+  "nota": "pulso 1625; pequeno salto"
+ },
+ "voofrente_20261120_151454": {
+  "linhas": 292,
+  "duracao_s": 29.7,
+  "nota": "pulso 1625 por 1 s e depois desvio de pitch +60 com acelerador 1600 por 1,5 s (fase 'frente'); foi para a DIREITA e subiu"
+ },
+ "voofrente_20261120_151826": {
+  "linhas": 60,
+  "duracao_s": 6.0,
+  "nota": ""
+ },
+ "eixos_direita_20261120_210706": {
+  "linhas": 186,
+  "duracao_s": 18.9,
+  "nota": "pulso 1625, depois roll +60 com acelerador 1550 por 1,5 s (fase 'direita'); perdeu o controle"
+ },
+ "eixos_frente_20261120_182234": {
+  "linhas": 88,
+  "duracao_s": 8.8,
+  "nota": "pulso 1625, depois pitch +60 com acelerador 1550 por 1,5 s (fase 'frente')"
+ },
+ "piloto_1120_205814_dados": {
+  "linhas": 96,
+  "duracao_s": 4.8,
+  "nota": "piloto pelo teclado (comandos em roll_us/pitch_us/yaw_us/acel_us)"
+ },
+ "piloto_1120_210847_dados": {
+  "linhas": 283,
+  "duracao_s": 39.7,
+  "nota": "piloto pelo teclado (comandos em roll_us/pitch_us/yaw_us/acel_us)"
+ },
+ "piloto_1120_211349_dados": {
+  "linhas": 73,
+  "duracao_s": 6.3,
+  "nota": "piloto pelo teclado (comandos em roll_us/pitch_us/yaw_us/acel_us)"
+ },
+ "piloto_1120_211650_dados": {
+  "linhas": 123,
+  "duracao_s": 6.2,
+  "nota": "piloto pelo teclado (comandos em roll_us/pitch_us/yaw_us/acel_us)"
+ },
+ "piloto_1120_211749_dados": {
+  "linhas": 401,
+  "duracao_s": 20.1,
+  "nota": "piloto pelo teclado (comandos em roll_us/pitch_us/yaw_us/acel_us)"
+ },
+ "piloto_1120_211934_dados": {
+  "linhas": 1314,
+  "duracao_s": 66.1,
+  "nota": "piloto pelo teclado (comandos em roll_us/pitch_us/yaw_us/acel_us)"
+ },
+ "piloto_1120_212516_dados": {
+  "linhas": 2339,
+  "duracao_s": 117.4,
+  "nota": "piloto pelo teclado (comandos em roll_us/pitch_us/yaw_us/acel_us)"
+ },
+ "piloto_1120_212751_dados": {
+  "linhas": 1961,
+  "duracao_s": 98.4,
+  "nota": "piloto pelo teclado (comandos em roll_us/pitch_us/yaw_us/acel_us)"
+ },
+ "piloto_1120_213309_dados": {
+  "linhas": 551,
+  "duracao_s": 27.6,
+  "nota": "piloto pelo teclado (comandos em roll_us/pitch_us/yaw_us/acel_us)"
+ },
+ "piloto_1120_224053_dados": {
+  "linhas": 82,
+  "duracao_s": 4.1,
+  "nota": "piloto pelo teclado (comandos em roll_us/pitch_us/yaw_us/acel_us)"
+ },
+ "gravacao_1120_015519_telemetria": {
+  "linhas": 89,
+  "duracao_s": 10.0,
+  "nota": "só telemetria, drone sem voar, sem comando enviado"
+ },
+ "gravacao_1120_084427_telemetria": {
+  "linhas": 90,
+  "duracao_s": 10.0,
+  "nota": "só telemetria, drone sem voar, sem comando enviado"
+ },
+ "gravacao_1120_181457_telemetria": {
+  "linhas": 91,
+  "duracao_s": 10.0,
+  "nota": "só telemetria, drone sem voar, sem comando enviado"
+ },
+ "gravacao_1120_181703_telemetria": {
+  "linhas": 28,
+  "duracao_s": 3.0,
+  "nota": "só telemetria, drone sem voar, sem comando enviado"
+ },
+ "gravacao_1120_181810_telemetria": {
+  "linhas": 27,
+  "duracao_s": 2.9,
+  "nota": "só telemetria, drone sem voar, sem comando enviado"
+ },
+ "gravacao_1120_182010_telemetria": {
+  "linhas": 645,
+  "duracao_s": 75.0,
+  "nota": "só telemetria, drone sem voar, sem comando enviado"
+ }
+}

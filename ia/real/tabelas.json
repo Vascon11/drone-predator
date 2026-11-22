@@ -1,0 +1,386 @@
+{
+  "resumo": [
+    {
+      "grupo": "repouso",
+      "controlador": "PD",
+      "n": 4070,
+      "p5": -40.22574788659985,
+      "p50": 0.0,
+      "p95": 60.0,
+      "abs_medio": 15.80241195766095,
+      "sat95": 0.0,
+      "sat57": 0.14815724815724815,
+      "abaixo5": 0.2673218673218673,
+      "sat95_max_s": 0.0,
+      "sat57_max_s": 29.900000000000002,
+      "inversoes": 0
+    },
+    {
+      "grupo": "repouso",
+      "controlador": "MLP",
+      "n": 4070,
+      "p5": -40.31027710047937,
+      "p50": -0.009411459321940242,
+      "p95": 58.766085880218725,
+      "abs_medio": 15.738136924158903,
+      "sat95": 0.0,
+      "sat57": 0.14103194103194103,
+      "abaixo5": 0.26756756756756755,
+      "sat95_max_s": 0.0,
+      "sat57_max_s": 29.900000000000002,
+      "inversoes": 0
+    },
+    {
+      "grupo": "repouso",
+      "controlador": "MLP_csv_anterior",
+      "n": 2921,
+      "p5": -47.17329900328557,
+      "p50": 0.25998449770610466,
+      "p95": 59.18556017531108,
+      "abs_medio": 20.45828211477946,
+      "sat95": 0.0,
+      "sat57": 0.1482369051694625,
+      "abaixo5": 0.1841834988017802,
+      "sat95_max_s": 0.0,
+      "sat57_max_s": 28.400000000000002,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "PD",
+      "n": 1002,
+      "p5": -54.51173138204514,
+      "p50": 0.0,
+      "p95": 60.0,
+      "abs_medio": 23.179956370637928,
+      "sat95": 0.0,
+      "sat57": 0.28642714570858285,
+      "abaixo5": 0.17065868263473055,
+      "sat95_max_s": 0.0,
+      "sat57_max_s": 12.3,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "MLP",
+      "n": 1002,
+      "p5": -53.969244598611894,
+      "p50": -0.035209626943155915,
+      "p95": 59.98863188484363,
+      "abs_medio": 23.09006626418983,
+      "sat95": 0.0,
+      "sat57": 0.27944111776447106,
+      "abaixo5": 0.17265469061876249,
+      "sat95_max_s": 0.0,
+      "sat57_max_s": 12.200000000000001,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "MLP_csv_anterior",
+      "n": 223,
+      "p5": -25.001375736117723,
+      "p50": -0.009411459321940242,
+      "p95": 58.63182521429417,
+      "abs_medio": 17.643477036204533,
+      "sat95": 0.0,
+      "sat57": 0.09865470852017937,
+      "abaixo5": 0.29596412556053814,
+      "sat95_max_s": 0.0,
+      "sat57_max_s": 1.9000000000000001,
+      "inversoes": 0
+    }
+  ],
+  "alarmes": [
+    {
+      "grupo": "repouso",
+      "controlador": "PD",
+      "arquivo": "piloto_1120_211934_dados",
+      "inicio": 30.121,
+      "fim": 66.02100000000051,
+      "sat95_s": 0.0,
+      "sat57_s": 29.900000000000002,
+      "inversoes": 0
+    },
+    {
+      "grupo": "repouso",
+      "controlador": "PD",
+      "arquivo": "piloto_1120_212516_dados",
+      "inicio": 31.168,
+      "fim": 117.36800000000122,
+      "sat95_s": 0.0,
+      "sat57_s": 20.5,
+      "inversoes": 0
+    },
+    {
+      "grupo": "repouso",
+      "controlador": "PD",
+      "arquivo": "piloto_1120_212751_dados",
+      "inicio": 33.202,
+      "fim": 61.7020000000004,
+      "sat95_s": 0.0,
+      "sat57_s": 3.6,
+      "inversoes": 0
+    },
+    {
+      "grupo": "repouso",
+      "controlador": "MLP",
+      "arquivo": "piloto_1120_211934_dados",
+      "inicio": 30.121,
+      "fim": 66.02100000000051,
+      "sat95_s": 0.0,
+      "sat57_s": 29.900000000000002,
+      "inversoes": 0
+    },
+    {
+      "grupo": "repouso",
+      "controlador": "MLP",
+      "arquivo": "piloto_1120_212516_dados",
+      "inicio": 31.168,
+      "fim": 117.36800000000122,
+      "sat95_s": 0.0,
+      "sat57_s": 20.0,
+      "inversoes": 0
+    },
+    {
+      "grupo": "repouso",
+      "controlador": "MLP",
+      "arquivo": "piloto_1120_212751_dados",
+      "inicio": 33.202,
+      "fim": 61.7020000000004,
+      "sat95_s": 0.0,
+      "sat57_s": 3.6,
+      "inversoes": 0
+    },
+    {
+      "grupo": "repouso",
+      "controlador": "MLP_csv_anterior",
+      "arquivo": "piloto_1120_211934_dados",
+      "inicio": 30.121,
+      "fim": 66.02100000000051,
+      "sat95_s": 0.0,
+      "sat57_s": 28.400000000000002,
+      "inversoes": 0
+    },
+    {
+      "grupo": "repouso",
+      "controlador": "MLP_csv_anterior",
+      "arquivo": "piloto_1120_212516_dados",
+      "inicio": 31.168,
+      "fim": 117.36800000000122,
+      "sat95_s": 0.0,
+      "sat57_s": 13.8,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "PD",
+      "arquivo": "voo1m_20261101_122237",
+      "inicio": 8.2,
+      "fim": 26.399999999999935,
+      "sat95_s": 0.0,
+      "sat57_s": 12.3,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "PD",
+      "arquivo": "voo1m_20261120_145855",
+      "inicio": 5.06,
+      "fim": 9.459999999999983,
+      "sat95_s": 0.0,
+      "sat57_s": 3.2,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "PD",
+      "arquivo": "voo1m_20261120_150130",
+      "inicio": 5.45,
+      "fim": 10.149999999999984,
+      "sat95_s": 0.0,
+      "sat57_s": 2.9000000000000004,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "PD",
+      "arquivo": "eixos_direita_20261120_210706",
+      "inicio": 9.08,
+      "fim": 12.979999999999986,
+      "sat95_s": 0.0,
+      "sat57_s": 2.5,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "PD",
+      "arquivo": "piloto_1120_213309_dados",
+      "inicio": 20.662,
+      "fim": 26.46200000000008,
+      "sat95_s": 0.0,
+      "sat57_s": 2.6,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "MLP",
+      "arquivo": "voo1m_20261101_122237",
+      "inicio": 8.2,
+      "fim": 26.399999999999935,
+      "sat95_s": 0.0,
+      "sat57_s": 12.200000000000001,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "MLP",
+      "arquivo": "voo1m_20261120_145855",
+      "inicio": 5.06,
+      "fim": 9.459999999999983,
+      "sat95_s": 0.0,
+      "sat57_s": 3.2,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "MLP",
+      "arquivo": "voo1m_20261120_150130",
+      "inicio": 5.45,
+      "fim": 10.149999999999984,
+      "sat95_s": 0.0,
+      "sat57_s": 2.9000000000000004,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "MLP",
+      "arquivo": "eixos_direita_20261120_210706",
+      "inicio": 9.08,
+      "fim": 12.979999999999986,
+      "sat95_s": 0.0,
+      "sat57_s": 2.5,
+      "inversoes": 0
+    },
+    {
+      "grupo": "ar_pouso",
+      "controlador": "MLP",
+      "arquivo": "piloto_1120_213309_dados",
+      "inicio": 20.662,
+      "fim": 26.46200000000008,
+      "sat95_s": 0.0,
+      "sat57_s": 2.2,
+      "inversoes": 0
+    }
+  ],
+  "prova_resumo": {
+    "velocidade/nominal/PD": {
+      "erro_m": 0.28524371914569036,
+      "perdida": 0.0,
+      "duracao_s": 60.0,
+      "saturado": 0.0,
+      "limite_pd": 0.0054666666666666665,
+      "suavidade": 0.6578171169641631,
+      "retidas": 0.0535
+    },
+    "velocidade/nominal/MLP": {
+      "erro_m": 0.28544319357743236,
+      "perdida": 0.0,
+      "duracao_s": 60.0,
+      "saturado": 0.0,
+      "limite_pd": 0.004366666666666666,
+      "suavidade": 0.6534373227225921,
+      "retidas": 0.0535
+    },
+    "velocidade/retencao/PD": {
+      "erro_m": 0.3017880353097232,
+      "perdida": 0.0,
+      "duracao_s": 60.0,
+      "saturado": 0.0,
+      "limite_pd": 0.006083333333333334,
+      "suavidade": 0.23437647811288495,
+      "retidas": 0.7536833333333335
+    },
+    "velocidade/retencao/MLP": {
+      "erro_m": 0.3019482029179031,
+      "perdida": 0.0,
+      "duracao_s": 60.0,
+      "saturado": 0.0,
+      "limite_pd": 0.004583333333333333,
+      "suavidade": 0.24939254903251218,
+      "retidas": 0.7536833333333335
+    },
+    "antigo/nominal/PD": {
+      "erro_m": 0.5312951125247118,
+      "perdida": 0.0,
+      "duracao_s": 60.0,
+      "saturado": 0.0,
+      "limite_pd": 0.026099999999999998,
+      "suavidade": 0.8693971515789264,
+      "retidas": 0.0535
+    },
+    "antigo/nominal/MLP": {
+      "erro_m": 0.5328112041168809,
+      "perdida": 0.0,
+      "duracao_s": 60.0,
+      "saturado": 0.0,
+      "limite_pd": 0.024316666666666667,
+      "suavidade": 0.8751888405496348,
+      "retidas": 0.0535
+    },
+    "antigo/retencao/PD": {
+      "erro_m": 0.6848737835713203,
+      "perdida": 0.03,
+      "duracao_s": 59.3932,
+      "saturado": 0.0,
+      "limite_pd": 0.1341489081837982,
+      "suavidade": 1.4444238714250688,
+      "retidas": 0.7536410920722618
+    },
+    "antigo/retencao/MLP": {
+      "erro_m": 0.6917641134689062,
+      "perdida": 0.03,
+      "duracao_s": 59.3988,
+      "saturado": 0.0,
+      "limite_pd": 0.12283569635010315,
+      "suavidade": 1.6335337058755188,
+      "retidas": 0.753678351717335
+    },
+    "medido/nominal/PD": {
+      "erro_m": 1.8101253757929698,
+      "perdida": 1.0,
+      "duracao_s": 8.257200000000001,
+      "saturado": 0.0,
+      "limite_pd": 0.7081179505373001,
+      "suavidade": 1.2564466317276988,
+      "retidas": 0.058481542155755906
+    },
+    "medido/nominal/MLP": {
+      "erro_m": 1.8104654548335821,
+      "perdida": 1.0,
+      "duracao_s": 8.253,
+      "saturado": 0.0,
+      "limite_pd": 0.6913041586518763,
+      "suavidade": 1.3818128506432297,
+      "retidas": 0.058481542155755906
+    },
+    "medido/retencao/PD": {
+      "erro_m": 1.819410668665194,
+      "perdida": 1.0,
+      "duracao_s": 8.253,
+      "saturado": 0.0,
+      "limite_pd": 0.6929582319401005,
+      "suavidade": 1.1255002935607958,
+      "retidas": 0.737955008532753
+    },
+    "medido/retencao/MLP": {
+      "erro_m": 1.819585616022339,
+      "perdida": 1.0,
+      "duracao_s": 8.247800000000002,
+      "saturado": 0.0,
+      "limite_pd": 0.676510744743477,
+      "suavidade": 1.4311745179471174,
+      "retidas": 0.7379248880508252
+    }
+  }
+}

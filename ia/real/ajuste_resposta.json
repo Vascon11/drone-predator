@@ -1,0 +1,236 @@
+[
+  {
+    "arquivo": "voofrente_20261120_151454",
+    "eixo": "roll",
+    "n": 8,
+    "melhor_lavagem": {
+      "atraso": 0.1,
+      "subida": 0.04,
+      "lavagem": 0.08,
+      "ganho": 0.1207433413090209,
+      "inicial_deg": 2.426225813148586,
+      "rmse": 0.6061388480922657
+    },
+    "melhor_mantido": {
+      "atraso": 0.2,
+      "subida": 0.25,
+      "lavagem": null,
+      "ganho": 0.01699401473907691,
+      "inicial_deg": 3.149588657195969,
+      "rmse": 0.6333325309039982
+    },
+    "envelope": {
+      "atraso": [
+        -0.1,
+        0.2
+      ],
+      "subida": [
+        0.04,
+        0.25
+      ],
+      "lavagem": [
+        0.08,
+        0.6
+      ],
+      "ganho": [
+        0.00021236437761452156,
+        0.39742710094211675
+      ]
+    }
+  },
+  {
+    "arquivo": "voofrente_20261120_151454",
+    "eixo": "pitch",
+    "n": 8,
+    "melhor_lavagem": {
+      "atraso": 0.05,
+      "subida": 0.14,
+      "lavagem": 0.14,
+      "ganho": 0.10026914055977189,
+      "inicial_deg": -2.4611885552809105,
+      "rmse": 0.23862408005341476
+    },
+    "melhor_mantido": {
+      "atraso": -0.1,
+      "subida": 0.25,
+      "lavagem": null,
+      "ganho": 0.009719428288054877,
+      "inicial_deg": -3.119451170653787,
+      "rmse": 0.6915709543762456
+    },
+    "envelope": {
+      "atraso": [
+        -0.1,
+        0.2
+      ],
+      "subida": [
+        0.04,
+        0.25
+      ],
+      "lavagem": [
+        0.08,
+        0.6
+      ],
+      "ganho": [
+        0.01438769128219642,
+        0.4959696525205872
+      ]
+    }
+  },
+  {
+    "arquivo": "eixos_direita_20261120_210706",
+    "eixo": "roll",
+    "n": 9,
+    "melhor_lavagem": {
+      "atraso": -0.1,
+      "subida": 0.25,
+      "lavagem": 0.45,
+      "ganho": 0.03843993061659557,
+      "inicial_deg": 0.803070014003904,
+      "rmse": 0.12043786660538544
+    },
+    "melhor_mantido": {
+      "atraso": -0.1,
+      "subida": 0.25,
+      "lavagem": null,
+      "ganho": 0.013597253228239192,
+      "inicial_deg": 1.463189257110513,
+      "rmse": 0.2388726452799017
+    },
+    "envelope": {
+      "atraso": [
+        -0.1,
+        0.2
+      ],
+      "subida": [
+        0.04,
+        0.25
+      ],
+      "lavagem": [
+        0.08,
+        0.6
+      ],
+      "ganho": [
+        0.0233029285747705,
+        0.3548281723836177
+      ]
+    }
+  },
+  {
+    "arquivo": "eixos_direita_20261120_210706",
+    "eixo": "pitch",
+    "n": 9,
+    "melhor_lavagem": {
+      "atraso": 0.15,
+      "subida": 0.1,
+      "lavagem": 0.08,
+      "ganho": 0.1375760496243977,
+      "inicial_deg": -1.067362886946033,
+      "rmse": 0.3338568072562353
+    },
+    "melhor_mantido": {
+      "atraso": 0.0,
+      "subida": 0.25,
+      "lavagem": null,
+      "ganho": 0.008322039734001101,
+      "inicial_deg": -1.7082493657797224,
+      "rmse": 0.9311719827781096
+    },
+    "envelope": {
+      "atraso": [
+        -0.1,
+        0.2
+      ],
+      "subida": [
+        0.04,
+        0.25
+      ],
+      "lavagem": [
+        0.08,
+        0.6
+      ],
+      "ganho": [
+        0.027618960546462384,
+        0.4788243528520066
+      ]
+    }
+  },
+  {
+    "arquivo": "eixos_frente_20261120_182234",
+    "eixo": "roll",
+    "n": 9,
+    "melhor_lavagem": {
+      "atraso": 0.2,
+      "subida": 0.18,
+      "lavagem": 0.6,
+      "ganho": 0.04254171371501804,
+      "inicial_deg": 2.516682315559373,
+      "rmse": 0.349968841276057
+    },
+    "melhor_mantido": {
+      "atraso": 0.2,
+      "subida": 0.14,
+      "lavagem": null,
+      "ganho": 0.027786367551198482,
+      "inicial_deg": 2.7290239894686406,
+      "rmse": 0.19341554252223295
+    },
+    "envelope": {
+      "atraso": [
+        -0.1,
+        0.2
+      ],
+      "subida": [
+        0.04,
+        0.25
+      ],
+      "lavagem": [
+        0.08,
+        0.6
+      ],
+      "ganho": [
+        0.032874425077433114,
+        0.11567689929751711
+      ]
+    }
+  },
+  {
+    "arquivo": "eixos_frente_20261120_182234",
+    "eixo": "pitch",
+    "n": 9,
+    "melhor_lavagem": {
+      "atraso": 0.05,
+      "subida": 0.14,
+      "lavagem": 0.14,
+      "ganho": 0.17923657781051164,
+      "inicial_deg": -1.7987633147251059,
+      "rmse": 0.6517954635387231
+    },
+    "melhor_mantido": {
+      "atraso": -0.1,
+      "subida": 0.25,
+      "lavagem": null,
+      "ganho": 0.012936742871241856,
+      "inicial_deg": -3.5889356002071438,
+      "rmse": 1.577611811097192
+    },
+    "envelope": {
+      "atraso": [
+        -0.1,
+        0.15
+      ],
+      "subida": [
+        0.04,
+        0.25
+      ],
+      "lavagem": [
+        0.08,
+        0.45
+      ],
+      "ganho": [
+        0.07623001997441471,
+        0.3999510779601212
+      ]
+    }
+  }
+]
