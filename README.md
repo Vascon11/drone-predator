@@ -1,5 +1,7 @@
 # Predator — controle de drone pelo computador
 
+> Manual completo: [`docs/manual-biblioteca-e-voo.md`](docs/manual-biblioteca-e-voo.md)
+
 ![Drone Predator](hardware/fotos/01-visao-geral.jpg)
 
 Controle de um hexacóptero chinês genérico ("Predator", app **LW-FPV**, módulo Wi-Fi **Lewei**) direto do

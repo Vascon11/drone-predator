@@ -87,6 +87,7 @@ O stream de vídeo (TCP 7060) não tem áudio.
 ## Ideias de expansão
 
 Diagramas de ligação do ESP32 (Wi-Fi e UART): [`esp32.md`](esp32.md).
+Ficha da placa ESP32 que temos, como gravar nela e o firmware de teste: [`esp32-disponivel.md`](esp32-disponivel.md).
 Diagrama elétrico fio a fio: [`ligacao-eletrica.md`](ligacao-eletrica.md).
 
 
