@@ -35,13 +35,15 @@ def joystick(roll=1500, pitch=1500, yaw=1500, throttle=1500, ptz1=1500, ptz2=150
     return frame(0xB5, struct.pack('<6H', roll, pitch, yaw, throttle, ptz1, ptz2))
 
 
-def split(data):
-    """Separa um datagrama em quadros BT válidos."""
+def split(data, direction=None):
+    """Separa quadros BT válidos, opcionalmente exigindo a direção esperada."""
     out, i = [], 0
     while (i := data.find(b'BT', i)) >= 0 and i + 6 <= len(data):
         n = data[i + 3]
         end = i + n + 6
-        if end <= len(data) and reduce(lambda a, b: a ^ b, data[i + 3:end - 1], 0) == data[end - 1]:
+        valid_direction = direction is None or data[i + 2] == direction
+        if (valid_direction and end <= len(data)
+                and reduce(lambda a, b: a ^ b, data[i + 3:end - 1], 0) == data[end - 1]):
             out.append(data[i:end])
             i = end
         else:

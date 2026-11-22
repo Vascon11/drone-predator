@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel Predator</title>
+<style>
+  :root {
+    --fundo: #0b0f14; --painel: #121821; --painel2: #18202b; --borda: #243042;
+    --texto: #e6edf3; --fraco: #8b98a9; --azul: #4aa3ff; --verde: #3ccf7a; --ambar: #f0b429; --vermelho: #ff4d4f;
+    --raio: 14px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--fundo); color: var(--texto);
+    font: 14px/1.35 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  body { display: grid; grid-template-rows: auto 1fr auto; min-height: 100vh; }
+  header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--borda); flex-wrap: wrap; }
+  header h1 { font-size: 16px; margin: 0 8px 0 0; letter-spacing: .5px; }
+  .pill { padding: 4px 10px; border-radius: 999px; font-weight: 600; font-size: 12px; background: var(--painel2); border: 1px solid var(--borda); }
+  .pill.seco { color: var(--azul); border-color: #24507a; }
+  .pill.voar { color: #fff; background: #7a1f22; border-color: var(--vermelho); }
+  .pill.ok { color: var(--verde); } .pill.ruim { color: var(--vermelho); border-color: var(--vermelho); }
+  .pill.auto { color: var(--ambar); border-color: #6b5214; }
+  .espaco { flex: 1; }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 14px; padding: 14px 16px; }
+  @media (max-width: 1000px) { main { grid-template-columns: 1fr; } }
+  .video { position: relative; background: #000; border-radius: var(--raio); overflow: hidden; aspect-ratio: 16/9; border: 1px solid var(--borda); }
+  .video img, .video canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .video img { object-fit: contain; }
+  .semvideo { position: absolute; inset: 0; display: grid; place-items: center; color: var(--fraco); }
+  .aviso { margin-top: 10px; padding: 10px 14px; border-radius: 10px; background: var(--painel); border: 1px solid var(--borda); min-height: 42px; font-weight: 500; }
+  .aviso.alerta { border-color: var(--vermelho); color: #ffd7d7; background: #2a1316; }
+  .aviso.auto { border-color: #6b5214; color: #ffe6a8; }
+  aside { display: flex; flex-direction: column; gap: 12px; }
+  .cartao { background: var(--painel); border: 1px solid var(--borda); border-radius: var(--raio); padding: 12px 14px; }
+  .cartao h2 { margin: 0 0 8px; font-size: 12px; color: var(--fraco); text-transform: uppercase; letter-spacing: .8px; font-weight: 600; }
+  .grade { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .med { background: var(--painel2); border-radius: 10px; padding: 8px 10px; }
+  .med .r { font-size: 11px; color: var(--fraco); }
+  .med .v { font-size: 20px; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .med .v small { font-size: 12px; color: var(--fraco); font-weight: 500; }
+  .bat { height: 10px; border-radius: 6px; background: var(--painel2); overflow: hidden; margin-top: 6px; }
+  .bat > div { height: 100%; width: 0; transition: width .3s, background .3s; }
+  .botoes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  button { font: inherit; font-weight: 650; color: var(--texto); background: var(--painel2); border: 1px solid var(--borda);
+    border-radius: 12px; padding: 12px 8px; cursor: pointer; user-select: none; touch-action: none; }
+  button:hover { border-color: #3a4c66; }
+  button:active, button.ativo { background: #24344a; border-color: var(--azul); }
+  button kbd { display: block; font: 11px ui-monospace, monospace; color: var(--fraco); margin-top: 2px; }
+  button.perigo { background: #3a1114; border-color: var(--vermelho); color: #ffd0d0; grid-column: span 2; padding: 14px; }
+  button.verde { border-color: #1f6b42; }
+  button:disabled { opacity: .4; cursor: not-allowed; }
+  .direcional { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .direcional .vazio { visibility: hidden; }
+  .linha { display: flex; justify-content: space-between; gap: 8px; color: var(--fraco); font-size: 12px; }
+  .linha b { color: var(--texto); font-weight: 600; }
+  #historico { list-style: none; margin: 0; padding: 0; max-height: 150px; overflow: auto; font-size: 12px; color: var(--fraco); }
+  #historico li { padding: 3px 0; border-bottom: 1px dashed var(--borda); }
+  #historico li span { color: var(--texto); }
+  footer { padding: 8px 16px 12px; color: var(--fraco); font-size: 12px; border-top: 1px solid var(--borda); }
+  footer kbd { font: 11px ui-monospace, monospace; background: var(--painel2); border: 1px solid var(--borda); border-radius: 5px; padding: 1px 5px; color: var(--texto); }
+</style>
+</head>
+<body>
+<header>
+  <h1>PREDATOR</h1>
+  <span id="modo" class="pill">—</span>
+  <span id="fase" class="pill">—</span>
+  <span id="link" class="pill">link</span>
+  <span id="roteiro" class="pill auto" hidden>AUTOMÁTICO</span>
+  <span class="espaco"></span>
+  <span id="gravando" class="pill" hidden>● gravando</span>
+</header>
+
+<main>
+  <section>
+    <div class="video">
+      <div class="semvideo" id="semvideo">aguardando vídeo do drone…</div>
+      <img id="img" alt="câmera do drone">
+      <canvas id="hud"></canvas>
+    </div>
+    <div id="aviso" class="aviso">—</div>
+  </section>
+
+  <aside>
+    <div class="cartao">
+      <h2>Bateria</h2>
+      <div class="linha"><span>leitura (unidade não confirmada)</span><b id="bat">—</b></div>
+      <div class="bat"><div id="batbar"></div></div>
+      <div class="linha" style="margin-top:6px"><span id="batdica">em repouso: ≥ 75 para um voo completo</span></div>
+    </div>
+
+    <div class="cartao">
+      <h2>Telemetria</h2>
+      <div class="grade">
+        <div class="med"><div class="r">altura</div><div class="v" id="alt">—</div></div>
+        <div class="med"><div class="r">distância da partida</div><div class="v" id="dist">—</div></div>
+        <div class="med"><div class="r">inclinação (roll / pitch)</div><div class="v" id="incl">—</div></div>
+        <div class="med"><div class="r">rumo do nariz</div><div class="v" id="rumo">—</div></div>
+        <div class="med"><div class="r">GPS</div><div class="v" id="gps">—</div></div>
+        <div class="med"><div class="r">estado · modo</div><div class="v" id="estado">—</div></div>
+      </div>
+      <div class="linha" style="margin-top:8px"><span>acelerador</span><b id="acel">—</b></div>
+      <div class="linha"><span>roll · pitch (µs)</span><b id="rp">—</b></div>
+      <div class="linha" id="gestolinha" hidden><span>gesto</span><b id="gesto">—</b></div>
+    </div>
+
+    <div class="cartao">
+      <h2>Comandos</h2>
+      <div class="botoes">
+        <button class="verde" data-acao="t">Destravar<kbd>T</kbd></button>
+        <button data-acao="l">Pousar<kbd>L</kbd></button>
+        <button data-acao="h">Segurar posição<kbd>H</kbd></button>
+        <button data-acao="g">Manobra auto<kbd>G</kbd></button>
+        <button class="perigo" data-acao="x">EMERGÊNCIA — corta os motores<kbd>X</kbd></button>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <h2>Manche (segure)</h2>
+      <div class="direcional">
+        <button data-tecla="q">Desce<kbd>Q</kbd></button>
+        <button data-tecla="w">Frente<kbd>W</kbd></button>
+        <button data-tecla="e">Sobe<kbd>E</kbd></button>
+        <button data-tecla="a">Esquerda<kbd>A</kbd></button>
+        <button data-tecla="s">Trás<kbd>S</kbd></button>
+        <button data-tecla="d">Direita<kbd>D</kbd></button>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <h2>Histórico</h2>
+      <ul id="historico"></ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  Teclado: <kbd>T</kbd> destrava · segure <kbd>E</kbd>/<kbd>Q</kbd> sobe/desce · <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move ·
+  <kbd>H</kbd> segura · <kbd>G</kbd> manobra · <kbd>L</kbd> pousa · <kbd>X</kbd> emergência · <kbd>Esc</kbd> pousa e sai.
+  Qualquer tecla de movimento cancela o automático. Se esta aba perder o foco, as teclas são soltas.
+</footer>
+
+<script>
+const MOV = new Set(["w","a","s","d","e","q","c","z"]);
+const ACOES = new Set(["t","l","x","h","g","escape"]);
+const seguradas = new Set();       // teclado
+const botoesSeg = new Set();       // botões do direcional
+let ultimo = null, ultimoAviso = "";
+
+const $ = id => document.getElementById(id);
+const post = (url, obj) => fetch(url, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(obj)}).catch(() => {});
+
+// vídeo MJPEG: reconecta se cair
+function ligarVideo() {
+  const img = $("img");
+  img.onload = () => { $("semvideo").hidden = true; };
+  img.onerror = () => { $("semvideo").hidden = false; setTimeout(ligarVideo, 1000); };
+  img.src = "/video.mjpg?t=" + Date.now();
+}
+ligarVideo();
+
+// teclas: manda o conjunto segurado a cada 100 ms (o servidor solta tudo se parar de chegar)
+function conjunto() { return [...new Set([...seguradas, ...botoesSeg])]; }
+setInterval(() => post("/teclas", {teclas: conjunto()}), 100);
+
+addEventListener("keydown", ev => {
+  const k = ev.key.toLowerCase() === "escape" ? "escape" : ev.key.toLowerCase();
+  if (MOV.has(k)) { seguradas.add(k); ev.preventDefault(); }
+  else if (ACOES.has(k) && !ev.repeat) { post("/acao", {k}); ev.preventDefault(); }
+});
+addEventListener("keyup", ev => { seguradas.delete(ev.key.toLowerCase()); });
+addEventListener("blur", () => { seguradas.clear(); botoesSeg.clear(); });
+document.addEventListener("visibilitychange", () => { if (document.hidden) { seguradas.clear(); botoesSeg.clear(); } });
+
+document.querySelectorAll("[data-tecla]").forEach(b => {
+  const k = b.dataset.tecla;
+  const soltar = () => { botoesSeg.delete(k); b.classList.remove("ativo"); };
+  b.addEventListener("pointerdown", e => { botoesSeg.add(k); b.classList.add("ativo"); b.setPointerCapture(e.pointerId); });
+  b.addEventListener("pointerup", soltar); b.addEventListener("pointercancel", soltar); b.addEventListener("lostpointercapture", soltar);
+});
+document.querySelectorAll("[data-acao]").forEach(b => b.addEventListener("click", () => post("/acao", {k: b.dataset.acao})));
+
+// HUD: horizonte artificial, mira, rumo e altura sobre o vídeo
+function desenharHUD(t) {
+  const c = $("hud"), r = c.getBoundingClientRect();
+  if (c.width !== r.width * devicePixelRatio) { c.width = r.width * devicePixelRatio; c.height = r.height * devicePixelRatio; }
+  const g = c.getContext("2d"), W = c.width, H = c.height, s = devicePixelRatio;
+  g.clearRect(0, 0, W, H);
+  if (!t) return;
+  const cx = W / 2, cy = H / 2;
+  g.save();
+  g.translate(cx, cy + (t.pitch || 0) * 6 * s);
+  g.rotate(-(t.roll || 0) * Math.PI / 180);
+  g.strokeStyle = "rgba(255,255,255,.75)"; g.lineWidth = 2 * s;
+  g.beginPath(); g.moveTo(-W * .22, 0); g.lineTo(-W * .06, 0); g.moveTo(W * .06, 0); g.lineTo(W * .22, 0); g.stroke();
+  g.restore();
+  g.strokeStyle = "#ffd25a"; g.lineWidth = 3 * s;
+  g.beginPath(); g.moveTo(cx - 28 * s, cy); g.lineTo(cx - 8 * s, cy); g.lineTo(cx, cy + 8 * s); g.lineTo(cx + 8 * s, cy); g.lineTo(cx + 28 * s, cy); g.stroke();
+  g.font = `${600} ${15 * s}px system-ui`; g.fillStyle = "rgba(0,0,0,.45)";
+  const caixa = (x, y, txt, cor) => { const m = g.measureText(txt).width; g.fillStyle = "rgba(0,0,0,.5)";
+    g.fillRect(x - 8 * s, y - 18 * s, m + 16 * s, 26 * s); g.fillStyle = cor || "#fff"; g.fillText(txt, x, y); };
+  caixa(16 * s, 30 * s, `ALT ${(t.altura ?? 0).toFixed(1)} m`);
+  caixa(16 * s, 62 * s, `DIST ${(t.distancia ?? 0).toFixed(1)} m`);
+  caixa(W / 2 - 34 * s, 30 * s, `${Math.round(t.yaw || 0)}°`);
+  const incl = Math.max(Math.abs(t.roll || 0), Math.abs(t.pitch || 0));
+  caixa(W - 150 * s, 30 * s, `INCL ${incl.toFixed(0)}°`, incl > 25 ? "#ff6b6b" : "#fff");
+}
+addEventListener("resize", () => desenharHUD(ultimo && ultimo.tel));
+
+function fmt(v, d = 1) { return (v === null || v === undefined) ? "—" : Number(v).toFixed(d); }
+
+async function atualizar() {
+  let e;
+  try { e = await (await fetch("/estado", {cache: "no-store"})).json(); }
+  catch { $("link").className = "pill ruim"; $("link").textContent = "painel desconectado"; return; }
+  ultimo = e; const t = e.tel;
+  $("modo").className = "pill " + (e.voar ? "voar" : "seco");
+  $("modo").textContent = e.voar ? "VOANDO — manda comandos" : "SECO — não envia nada";
+  $("fase").textContent = { chao: "no chão", armando: "destravando…", voando: e.no_ar ? "no ar" : "destravado", pousando: "pousando" }[e.fase] || e.fase;
+  $("link").className = "pill " + (e.link ? "ok" : "ruim");
+  $("link").textContent = e.link ? `link ok · vídeo ${Math.round(e.video_fps)} q/s` : "LINK PERDIDO";
+  $("roteiro").hidden = !e.roteiro;
+  $("gravando").hidden = !e.pasta; $("gravando").title = e.pasta;
+  const b = t.bateria;
+  $("bat").textContent = b ?? "—";
+  const cor = b >= 75 ? "var(--verde)" : b >= 45 ? "var(--ambar)" : "var(--vermelho)";
+  $("batbar").style.width = Math.max(0, Math.min(100, b || 0)) + "%"; $("batbar").style.background = cor;
+  $("batdica").textContent = e.fase === "voando" ? "em voo a leitura despenca (queda de tensão); vale a de repouso"
+    : b >= 75 ? "boa para um voo completo" : b >= 45 ? "voo curto: o estado 5 pode vir em segundos" : "fraca: carregar antes de voar";
+  $("alt").innerHTML = `${fmt(t.altura)} <small>m</small>`;
+  $("dist").innerHTML = `${fmt(t.distancia)} <small>m</small>`;
+  $("incl").innerHTML = `${fmt(t.roll, 0)}° / ${fmt(t.pitch, 0)}°`;
+  $("rumo").innerHTML = `${fmt(t.yaw, 0)}°`;
+  $("gps").innerHTML = `${t.satelites ?? "—"} <small>${t.gps_fix ? "sat · fix" : "sat · sem fix"}</small>`;
+  $("estado").innerHTML = `${t.estado ?? "—"} · ${t.modo ?? "—"}` + (t.estado === 5 ? ' <small style="color:var(--ambar)">bateria</small>' : "");
+  $("acel").textContent = e.cmd.throttle ?? "—";
+  $("rp").textContent = `${(e.cmd.roll ?? 1500) - 1500} · ${(e.cmd.pitch ?? 1500) - 1500}`;
+  $("gestolinha").hidden = !e.gestos; $("gesto").textContent = e.gesto || "—";
+  const av = $("aviso"); av.textContent = e.aviso || "—";
+  av.className = "aviso" + (/EMERG|CORTAD|CAPOT|PERDID|recusad|RECUSAD/.test(e.aviso) ? " alerta" : e.roteiro ? " auto" : "");
+  if (e.aviso && e.aviso !== ultimoAviso) {
+    ultimoAviso = e.aviso;
+    const li = document.createElement("li");
+    li.innerHTML = `${new Date().toLocaleTimeString("pt-BR")} — <span></span>`; li.querySelector("span").textContent = e.aviso;
+    $("historico").prepend(li);
+    while ($("historico").children.length > 40) $("historico").lastChild.remove();
+  }
+  document.querySelectorAll("[data-tecla]").forEach(btn => btn.classList.toggle("ativo", e.teclas.includes(btn.dataset.tecla)));
+  desenharHUD(t);
+}
+setInterval(atualizar, 100);
+</script>
+</body>
+</html>

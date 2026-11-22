@@ -1,0 +1,429 @@
+{
+  "arquivos": [
+    "jogo_1120_214150.csv",
+    "jogo_1120_214205.csv",
+    "jogo_1120_214435.csv",
+    "jogo_1120_214619.csv",
+    "jogo_1120_223803.csv",
+    "jogo_1120_224103.csv"
+  ],
+  "modelos": {
+    "velocidade": {
+      "rodadas": 15,
+      "amostras": 2725,
+      "completas": 2,
+      "detalhes": [
+        {
+          "arquivo": "jogo_1120_214150.csv",
+          "rodada": "1",
+          "amostras": 28,
+          "duracao_s": 2.7399999999999998,
+          "erro_m": 1.3911960592665138,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214205.csv",
+          "rodada": "1",
+          "amostras": 37,
+          "duracao_s": 3.64,
+          "erro_m": 1.2259790131342199,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214435.csv",
+          "rodada": "1",
+          "amostras": 149,
+          "duracao_s": 17.06,
+          "erro_m": 0.7609989231156505,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.2550335570469799,
+          "suavidade": 9.664429530201343
+        },
+        {
+          "arquivo": "jogo_1120_214435.csv",
+          "rodada": "2",
+          "amostras": 7,
+          "duracao_s": 0.62,
+          "erro_m": 0.4186156248652883,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214435.csv",
+          "rodada": "3",
+          "amostras": 2,
+          "duracao_s": 0.12,
+          "erro_m": 1.2538192561506714,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214435.csv",
+          "rodada": "4",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 1.0482537860651875,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214435.csv",
+          "rodada": "5",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 0.6109697210173348,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214435.csv",
+          "rodada": "6",
+          "amostras": 315,
+          "duracao_s": 36.12,
+          "erro_m": 0.24027563019456905,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.5206349206349207,
+          "suavidade": 20.571428571428573
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "1",
+          "amostras": 106,
+          "duracao_s": 11.88,
+          "erro_m": 0.7637034873927755,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "16",
+          "amostras": 552,
+          "duracao_s": 59.82,
+          "erro_m": 0.6783140585116201,
+          "perdida_observada": 0,
+          "completa": true,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 7.065217391304348
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "17",
+          "amostras": 552,
+          "duracao_s": 59.86,
+          "erro_m": 0.19218485016041717,
+          "perdida_observada": 0,
+          "completa": true,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 3.858695652173913
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "18",
+          "amostras": 424,
+          "duracao_s": 47.04,
+          "erro_m": 0.22757624705245028,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 6.403301886792453
+        },
+        {
+          "arquivo": "jogo_1120_223803.csv",
+          "rodada": "1",
+          "amostras": 42,
+          "duracao_s": 4.2,
+          "erro_m": 0.5932432795304703,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.19047619047619047,
+          "suavidade": 2.857142857142857
+        },
+        {
+          "arquivo": "jogo_1120_223803.csv",
+          "rodada": "4",
+          "amostras": 4,
+          "duracao_s": 0.31999999999999995,
+          "erro_m": 0.8413610600522062,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_224103.csv",
+          "rodada": "1",
+          "amostras": 505,
+          "duracao_s": 55.14,
+          "erro_m": 0.29134278781795564,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.055445544554455446,
+          "suavidade": 3.4172277227722767
+        }
+      ]
+    },
+    "antigo": {
+      "rodadas": 14,
+      "amostras": 97,
+      "completas": 0,
+      "detalhes": [
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "3",
+          "amostras": 17,
+          "duracao_s": 1.64,
+          "erro_m": 0.4768378785413892,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "4",
+          "amostras": 4,
+          "duracao_s": 0.31999999999999995,
+          "erro_m": 0.5604357122559143,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "5",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 0.98,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "6",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 0.7538554238048566,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "7",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 0.9066007941756945,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "8",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 1.056098480256458,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "9",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 0.5032891812864648,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "10",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 1.3362728014892766,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "11",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 0.4014498723377553,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "12",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 0.3170252355885884,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "13",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 1.4988599000573737,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "14",
+          "amostras": 1,
+          "duracao_s": 0.0,
+          "erro_m": 0.7131185034761053,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "15",
+          "amostras": 58,
+          "duracao_s": 6.12,
+          "erro_m": 2.54782400762693,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 3.103448275862069
+        },
+        {
+          "arquivo": "jogo_1120_223803.csv",
+          "rodada": "3",
+          "amostras": 8,
+          "duracao_s": 0.72,
+          "erro_m": 1.3565039191978767,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        }
+      ]
+    },
+    "medido": {
+      "rodadas": 4,
+      "amostras": 172,
+      "completas": 0,
+      "detalhes": [
+        {
+          "arquivo": "jogo_1120_214619.csv",
+          "rodada": "2",
+          "amostras": 4,
+          "duracao_s": 0.31999999999999995,
+          "erro_m": 0.9238374305113985,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_223803.csv",
+          "rodada": "2",
+          "amostras": 10,
+          "duracao_s": 0.9400000000000001,
+          "erro_m": 0.6724089724905177,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.0,
+          "suavidade": 0.0
+        },
+        {
+          "arquivo": "jogo_1120_223803.csv",
+          "rodada": "5",
+          "amostras": 93,
+          "duracao_s": 10.32,
+          "erro_m": 1.75077369791834,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.8279569892473119,
+          "suavidade": 10.32258064516129
+        },
+        {
+          "arquivo": "jogo_1120_224103.csv",
+          "rodada": "2",
+          "amostras": 65,
+          "duracao_s": 6.96,
+          "erro_m": 1.913164670802479,
+          "perdida_observada": 0,
+          "completa": false,
+          "saturado": 0.0,
+          "limite_pd": 0.6923076923076923,
+          "suavidade": 7.906923076923078
+        }
+      ]
+    }
+  }
+}

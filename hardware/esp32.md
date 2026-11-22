@@ -1,5 +1,7 @@
 # ESP32 + drone — diagramas de ligação
 
+A placa que temos de fato (ESP32 clássico, 2,4 GHz) está descrita em [`esp32-disponivel.md`](esp32-disponivel.md).
+
 Dois jeitos de colocar um ESP32 (sugestão: **ESP32-C3 Super Mini**) no drone. Os pinos são sugestões para o
 C3 e podem mudar; tudo marcado 🔎 depende das medições pendentes em [`README.md`](README.md).
 

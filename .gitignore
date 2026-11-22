@@ -8,3 +8,19 @@ capturas/
 __pycache__/
 *.pyc
 .venv/
+# Rust
+target/
+# Pacote Python
+dist/
+build/
+*.egg-info/
+# dados gerados pelos treinos (regeneráveis, grandes)
+ia/**/dados_*.npz
+ia/validacao.npz
+# repetição de voos reais com latitude/longitude (repositório público)
+ia/real/replay.json
+# configurações locais do Claude Code
+.claude/settings.json
+.claude/settings.local.json
+# registros de execução do OpenCode
+saida/
